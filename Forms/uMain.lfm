@@ -1,0 +1,94 @@
+object MainForm: TMainForm
+  Left = 301
+  Height = 275
+  Top = 112
+  Width = 800
+  Caption = 'MainForm'
+  ClientHeight = 275
+  ClientWidth = 800
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Height = -13
+  Font.Name = 'Tahoma'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '1.2.4.0'
+  object FilesView: TListView
+    Left = 10
+    Height = 190
+    Top = 10
+    Width = 780
+    Checkboxes = True
+    Columns = <    
+      item
+        Caption = 'ID'
+        Width = 70
+      end    
+      item
+        Caption = 'Имя файла'
+        Width = 450
+      end    
+      item
+        Caption = 'Статус'
+        Width = 220
+      end>
+    GridLines = True
+    ReadOnly = True
+    RowSelect = True
+    TabOrder = 0
+    ViewStyle = vsReport
+    OnCustomDrawItem = FilesViewCustomDrawItem
+    OnItemChecked = FilesViewItemChecked
+  end
+  object RefreshButton: TButton
+    Left = 450
+    Height = 25
+    Top = 210
+    Width = 340
+    Caption = 'Синхронизировать список'
+    OnClick = RefreshButtonClick
+    TabOrder = 1
+  end
+  object DownloadButton: TButton
+    Left = 450
+    Height = 25
+    Top = 240
+    Width = 340
+    Caption = 'Загрузить отмеченные'
+    OnClick = DownloadButtonClick
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    Left = 10
+    Height = 16
+    Top = 213
+    Width = 163
+    Caption = 'Адрес локального сервера:'
+    ParentColor = False
+  end
+  object ServerNameEdit: TEdit
+    Left = 180
+    Height = 24
+    Top = 211
+    Width = 250
+    TabOrder = 3
+    Text = '192.168.189.1'
+  end
+  object Label2: TLabel
+    Left = 10
+    Height = 16
+    Top = 243
+    Width = 137
+    Caption = 'Папка для сохранения:'
+    ParentColor = False
+  end
+  object FilePathEdit: TEdit
+    Left = 180
+    Height = 24
+    Top = 241
+    Width = 250
+    TabOrder = 4
+    Text = 'C:\'
+  end
+end
