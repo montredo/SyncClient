@@ -1,3 +1,17 @@
+{*******************************************************************************
+  Copyright (с) 2014 MontDigital Software <montredo@mail.ru>
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+*******************************************************************************}
+
 unit uService;
 
 {$MODE OBJFPC}{$H+}
@@ -68,7 +82,6 @@ type
       const Value: string);
 
     procedure OnRefreshData(AValue: string);
-
   protected
     procedure Execute; override;
   public
@@ -251,8 +264,7 @@ begin
             FFileArray[DataCount].FileName := SFileName;
             FFileArray[DataCount].FilePath := SFilePath;
             FFileArray[DataCount].FileLength := SFileLength;
-            FFileArray[DataCount].FileCheck :=
-              not FileExistsUTF8(FFilePath + SFilePath + SFileName);
+            FFileArray[DataCount].FileCheck := not FileExistsUTF8(FFilePath + SFilePath + SFileName);
 
             {$ENDREGION}
 
@@ -289,7 +301,6 @@ begin
       begin
         with FFileArray[I] do
         begin
-
           // synchronization
           if FileCheck then
             OnRefreshSyncMethod(IntToStr(FileID), FilePath + FileName,
@@ -346,3 +357,4 @@ begin
 end;
 
 end.
+

@@ -13,7 +13,7 @@ object MainForm: TMainForm
   Font.Quality = fqDraft
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  LCLVersion = '1.2.4.0'
+  LCLVersion = '1.2.6.0'
   object FilesView: TListView
     Left = 10
     Height = 190
